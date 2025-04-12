@@ -14,7 +14,10 @@ public class Paddle : MonoBehaviour
     public float growSpeed = 0.001f;    // Ne kadar hızlı uzasın?
     public GameObject top;
     public GameObject finalScreen;
+    private bool sceneTransitionInitiated = false;
+    public float transitionTimer = 0f; // Geçişin başlaması için gecikme sayacı
     public float fadeSpeed = 5f;
+    public GameObject transitionBackground;
     public  Color[] colors = new Color[]
     {
         new Color(3f/255f, 252f/255f, 252f/255f),
@@ -34,6 +37,7 @@ public class Paddle : MonoBehaviour
         paddleTransform = GetComponent<Transform>();
         transform.localScale = new Vector3(500, 5, 0);
         sr = GetComponent<SpriteRenderer>();  // SpriteRenderer'ı başlangıçta atayın
+        transitionBackground.SetActive(false);
 
         
     }
@@ -80,17 +84,29 @@ public class Paddle : MonoBehaviour
 
 
         if (Ball.hayattakiBallSayisi >= 6)
-    {
-        // finalScreen'in SpriteRenderer'ını al
-        SpriteRenderer fsr = finalScreen.GetComponent<SpriteRenderer>();
-        // Mevcut rengi kopyala
-        Color col = fsr.color;
-        // Alpha (transparanlık) değerini arttır, Time.deltaTime ile hız sabitleniyor
-        col.a += fadeSpeed * Time.deltaTime;
-        
-        // Güncel rengi tekrar ata
-        fsr.color = col;
-    }
+        {
+            // finalScreen'in SpriteRenderer'ını al
+            SpriteRenderer fsr = finalScreen.GetComponent<SpriteRenderer>();
+            // Mevcut rengi kopyala ve alpha'yı arttır
+            Color col = fsr.color;
+            col.a += fadeSpeed * Time.deltaTime;
+            fsr.color = col;
+
+            // BURADA: Geçiş tetiklenmeden önce 4 saniye bekle
+            if (!sceneTransitionInitiated)
+            {
+                transitionTimer += Time.deltaTime;
+                if (transitionTimer >= 2f)
+                {
+                    sceneTransitionInitiated = true;
+                    // SceneLoader'ı çağır: Sahne geçişi başlatılır.
+
+                    FindObjectOfType<SceneLoader>()?.TransitionScene();
+                    transitionBackground.SetActive(true);
+
+                }
+            }
+        }
     }
 
     // PADDLE COLLİSİYONLARI
