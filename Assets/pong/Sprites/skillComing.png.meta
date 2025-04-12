@@ -1,0 +1,488 @@
+fileFormatVersion: 2
+guid: 67215505de37fdd4c8e98e1597cb7dd1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1093767422557189210
+    second: ASDASD_0
+  - first:
+      213: -179745863191778361
+    second: ASDASD_1
+  - first:
+      213: 6052163318763517869
+    second: ASDASD_2
+  - first:
+      213: 1433690898523154638
+    second: ASDASD_3
+  - first:
+      213: -7306153432208879170
+    second: ASDASD_4
+  - first:
+      213: -5304553737790136811
+    second: ASDASD_5
+  - first:
+      213: -7162352199405373232
+    second: ASDASD_6
+  - first:
+      213: -3448140046922357461
+    second: ASDASD_7
+  - first:
+      213: -3688797099819026230
+    second: ASDASD_8
+  - first:
+      213: 5334192570537127590
+    second: ASDASD_9
+  - first:
+      213: 6826215043418892473
+    second: ASDASD_10
+  - first:
+      213: 5162025367494160022
+    second: ASDASD_11
+  - first:
+      213: 8336371289486790659
+    second: ASDASD_12
+  - first:
+      213: -8607335547183867796
+    second: ASDASD_13
+  - first:
+      213: -2561358099863756756
+    second: ASDASD_14
+  - first:
+      213: 2084180793143359893
+    second: ASDASD_15
+  - first:
+      213: -6645465317487885602
+    second: ASDASD_16
+  - first:
+      213: 6803540756724194791
+    second: ASDASD_17
+  - first:
+      213: -7662914006902117616
+    second: ASDASD_18
+  - first:
+      213: -2291853161624577979
+    second: ASDASD_19
+  - first:
+      213: -2213121363688730664
+    second: ASDASD_20
+  - first:
+      213: -7415787673485556002
+    second: ASDASD_21
+  - first:
+      213: 203186680572320952
+    second: ASDASD_22
+  - first:
+      213: -8335133279996598512
+    second: ASDASD_23
+  - first:
+      213: 5652588975071720715
+    second: ASDASD_24
+  - first:
+      213: -1039338486865879020
+    second: ASDASD_25
+  - first:
+      213: 8031010353644239789
+    second: ASDASD_26
+  - first:
+      213: 3244264550659676101
+    second: ASDASD_27
+  - first:
+      213: 5671037121516219573
+    second: ASDASD_28
+  - first:
+      213: 68975094228208560
+    second: ASDASD_29
+  - first:
+      213: 4501185427096457762
+    second: ASDASD_30
+  - first:
+      213: 1753357458745558230
+    second: ASDASD_31
+  - first:
+      213: 7850679482841635425
+    second: ASDASD_32
+  - first:
+      213: -1066316152726389580
+    second: ASDASD_33
+  - first:
+      213: 38559712707623900
+    second: ASDASD_34
+  - first:
+      213: 2569710075810077951
+    second: ASDASD_35
+  - first:
+      213: -5260688787386311902
+    second: ASDASD_36
+  - first:
+      213: 5766548513378675059
+    second: ASDASD_37
+  - first:
+      213: -6061350379834712907
+    second: ASDASD_38
+  - first:
+      213: 6336589442104787267
+    second: ASDASD_39
+  - first:
+      213: -2110972437300318185
+    second: ASDASD_40
+  - first:
+      213: 1306314509773771408
+    second: ASDASD_41
+  - first:
+      213: -4402380477769730895
+    second: ASDASD_42
+  - first:
+      213: -3335352718112958939
+    second: ASDASD_43
+  - first:
+      213: 814482467816065318
+    second: ASDASD_44
+  - first:
+      213: -5053098708491930245
+    second: ASDASD_45
+  - first:
+      213: -7702308815910528538
+    second: ASDASD_46
+  - first:
+      213: -2803411052576594425
+    second: ASDASD_47
+  - first:
+      213: -4618426740758724153
+    second: ASDASD_48
+  - first:
+      213: 8971687329620660921
+    second: ASDASD_49
+  - first:
+      213: 6515040320394288369
+    second: ASDASD_50
+  - first:
+      213: 2670217984790521606
+    second: ASDASD_51
+  - first:
+      213: -9182043723206622133
+    second: ASDASD_52
+  - first:
+      213: 437711723759379434
+    second: ASDASD_53
+  - first:
+      213: 6773266183394008910
+    second: ASDASD_54
+  - first:
+      213: -645418477119718976
+    second: ASDASD_55
+  - first:
+      213: -7775050145889489810
+    second: ASDASD_56
+  - first:
+      213: 6074584082161252672
+    second: ASDASD_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ASDASD_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5a9bd3bd1cfdf34592f50aa36f5bd18
+      internalID: -567950787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16a8e78015db2ac47996e5190c04f6a9
+      internalID: -1848370273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9209a9c584bd9eb408264e5f6e5da985
+      internalID: -502717053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa278b09580335499e3c49dd88ed271
+      internalID: -1871987036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1d46c949ed8ee4f8808c7f1408c6d3
+      internalID: 1535989900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d561faa9fb4244c4b9db60a739611d0b
+      internalID: -841356990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e1355095265b84fa654e531d39b1d8
+      internalID: 1814684296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ASDASD_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23122d0de70cfc049a00b853a042f222
+      internalID: -2067784221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: f21b406835d6b50409948705967bb6b3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ASDASD_0: -567950787
+      ASDASD_1: -1848370273
+      ASDASD_2: -502717053
+      ASDASD_3: -1871987036
+      ASDASD_4: 1535989900
+      ASDASD_5: -841356990
+      ASDASD_6: 1814684296
+      ASDASD_7: -2067784221
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
