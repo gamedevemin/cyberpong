@@ -7,17 +7,17 @@ using System.Diagnostics;
 public class Ball : MonoBehaviour
 {
     [SerializeField]
-    public static int hayattakiBallSayisi;
+    
 
     [Header("Topun Hareket Ayarları")]
-    private int speed = 10;
+    private int speed;
     public int maxSpeed = 20;
     private Vector2 direction;
     public Rigidbody2D rb;
 
     [Header("Top Yönetimi")]
     public GameObject BallPrefabi;
-    private static int ballOlusturmaSayaci;
+    public static int ballOlusturmaSayaci;
 
     [Header("Paddle Etkileşimi")]
     private Paddle paddleScript;
@@ -25,6 +25,7 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
+        speed = 6;
         rb = GetComponent<Rigidbody2D>();
         rb.freezeRotation = true; // BALL'IN ROTASYON DEĞERLERİ DONDURULUR
 
@@ -47,14 +48,16 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+
         // BALL YOK OLUŞ
         if (transform.position.y <= -5){
+            LevelManager1.hayattakiBallSayisi--;
             Destroy(gameObject);
-            hayattakiBallSayisi--;
+            
         } 
         //
 
-        if (ballOlusturmaSayaci == 4) CreateBall(); // YENİ BALL OLUŞMASI
+        if (ballOlusturmaSayaci >= 4) CreateBall(); // YENİ BALL OLUŞMASI
     }
 
     // BALL COLLİSİON'I İLE DİĞER COLLİSİONLARIN ETKİLEŞİMİ SONUÇLARI
@@ -68,7 +71,6 @@ public class Ball : MonoBehaviour
         speed = Mathf.Min(speed + 1, 50); 
         } 
         //
-
         
         if(collision.gameObject.tag == "Paddle")
         { 
@@ -95,7 +97,8 @@ public class Ball : MonoBehaviour
         }
         //
 
-
+        
+        UnityEngine.Debug.Log(ballOlusturmaSayaci);
     }
     //
 
@@ -127,10 +130,10 @@ public class Ball : MonoBehaviour
 
     // EKRANDA YENİ BALL SPAWN EDEN FONKSİYON
     void CreateBall(){
+    
         GameObject newBall = Instantiate(BallPrefabi, Vector3.zero, Quaternion.identity);
         ballOlusturmaSayaci = 0;
-        hayattakiBallSayisi++;
-                            UnityEngine.Debug.Log(hayattakiBallSayisi);
+        LevelManager1.hayattakiBallSayisi++;
 
     }
     //

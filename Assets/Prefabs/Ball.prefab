@@ -129,12 +129,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd5889be42d04449839220b093ff212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  direction: {x: 0, y: 0}
+  speed: 6
+  maxSpeed: 10
   rb: {fileID: 4343621014175982722}
-  ballOlusturmaSayaci: 0
   BallPrefabi: {fileID: 6047765356061848552}
-  paddleScript: {fileID: 0}
 --- !u!58 &6973719757980425221
 CircleCollider2D:
   m_ObjectHideFlags: 0

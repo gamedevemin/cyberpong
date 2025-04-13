@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class Paddle : MonoBehaviour
 {
     [SerializeField]
-
     [Header("Hareket Ayarları")]
     public static int speed = 10;
 
@@ -35,6 +35,7 @@ public class Paddle : MonoBehaviour
         new Color(255f/255f, 105f/255f, 180f/255f)
     };
 
+    public int paddleUzunlugu;
 
     private List<GameObject> currentWallCollisions = new List<GameObject>();
 
@@ -42,26 +43,32 @@ public class Paddle : MonoBehaviour
     {
         paddleTransform = GetComponent<Transform>();
         newPaddleScale = paddleTransform.localScale;
-        transform.localScale = new Vector3(500, 5, 0); // PADDLE BAŞLANGIÇ UZUNLUĞU
+        transform.localScale = new Vector3(paddleUzunlugu, 5, 0); // PADDLE BAŞLANGIÇ UZUNLUĞU
         sr = GetComponent<SpriteRenderer>();  // PADDLE'IN SPRİTERENDERER'INI DEGİSKENE ATAMAK
     }
 
     void Update()
     {
         // MOUSE İLE OYNA
-        float mouseP = Input.GetAxis("Mouse X") * speed * Time.deltaTime;
+        float mouseP = Input.GetAxis("Mouse X") * speed *  Time.unscaledDeltaTime;
         float newPositionX = transform.position.x + mouseP;
         newPositionX = Mathf.Clamp(newPositionX, minX, maxX);
         transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
         //
 
-        // PADDLE BOYUTUNUN DEĞİŞKENLİĞİ
-        /* if(Ball.hayattakiBallSayisi > 3 && Ball.hayattakiBallSayisi < 6)
+        if(LevelManager1.hayattakiBallSayisi > 2 && LevelManager1.hayattakiBallSayisi < 4)
         {
-            newPaddleScale.x = 700;
-        } */
-        //
+            transform.localScale = new Vector3(paddleUzunlugu + 150, 5, 0);
+        }
 
+        if(LevelManager1.hayattakiBallSayisi > 4 && LevelManager1.hayattakiBallSayisi < 6)
+        {
+            transform.localScale = new Vector3(paddleUzunlugu + 250, 5, 0);
+        }
+
+
+       
+        
         // Temasta olan duvarların rengini paddle rengine eşitliyoruz
         foreach (GameObject wall in currentWallCollisions)
         {
@@ -113,4 +120,6 @@ public class Paddle : MonoBehaviour
             }
         }
     }
+
+    
 }
