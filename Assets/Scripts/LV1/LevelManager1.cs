@@ -28,6 +28,7 @@ public class LevelManager1 : MonoBehaviour
     public GameObject transitionBackground;    
     void Start()
     {
+        UnityEngine.Debug.Log("startlevel1");
         GameObject newBall = Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
         transitionBackground.SetActive(false); // SAHNE GEÇİŞİ AMAÇLI EKRANI KAPLAYACAK OLAN GÖRÜNTÜ
         paddleScale = paddleObject.transform.localScale;
@@ -77,7 +78,7 @@ public class LevelManager1 : MonoBehaviour
                     sceneTransitionInitiated = true;                    
                     transitionBackground.SetActive(true); // FİNAL EKRANI AÇILIYOR
                     FindObjectOfType<SceneLoader>().StartSceneTransition(); // DİĞER SAHNEYE GEÇMEK İÇİN SceneLoader.cs'deki ilgili fonksiyon burada çalıştırılıyor
-                    MusicManager.instance.StopMusic(); 
+                    // MusicManager.instance.StopMusic(); 
                 }
             }
             //

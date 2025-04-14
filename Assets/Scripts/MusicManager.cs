@@ -12,6 +12,7 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+
         }
 
         // Singleton kur
@@ -24,6 +25,13 @@ public class MusicManager : MonoBehaviour
         // Müzik çalmıyorsa başlat
         if (!audioSource.isPlaying)
             audioSource.Play();
+    }
+    void Update()
+    {
+       
+        Debug.Log(instance);
+        Debug.Log(audioSource.isPlaying);
+        Debug.Log(AudioListener.pause);
     }
 
     // Müzik durdurma

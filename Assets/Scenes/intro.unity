@@ -148,11 +148,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338752745}
-  m_Text: "A\u015E\u0130LERHKEA\u0130R\u015EL KGAE\u015E\u0130LRKG A\u015E\u0130ELRGK
-    A\u015E\u0130RLEKG EA\u015E\u0130L\nA\u015E\u0130LERGKA\u015E\u0130LERKGAERGAEGRAERGAERGAERGAERG\nAERG
-    A\u015ELERGK SR AERGAEGAERGAERG AEGRAERG\nS\u015ELRTHKS\u015ELRTHKS\u015ELRTHK
-    AERGAERGAERGAERGAERG\nSR\u015ELTHKS\u015ELRT\u0130HKSR\u015E\u0130LTHKSR\u015ELT\u0130HKSRAERGAERGAREGA\nAER\u015EGLAKERG\u015ELAERG
-    EARGAERGAERGAERG\nAER\u015ELGKAE\u015ELRGKAER\u015ELG"
+  m_Text: "Bir g\xFCn, etik ve e\u011Flenceli bir oyun geli\u015Ftirmeye \xE7al\u0131\u015Fan
+    bir bilim insan\u0131, \nkendini yanl\u0131\u015Fl\u0131kla bir pong oyununun
+    i\xE7inde, bilin\xE7li bir diske d\xF6n\xFC\u015Ft\xFCr\xFCr...\n\r\n"
   m_OffsetZ: 0
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -160,7 +158,7 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 47
-  m_FontStyle: 0
+  m_FontStyle: 2
   m_RichText: 1
   m_Font: {fileID: 0}
   m_Color:
@@ -290,7 +288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.0099, y: 0.009}
+  m_AnchoredPosition: {x: 0.19, y: -0.47}
   m_SizeDelta: {x: 17.8116, y: 10.0384}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &461865043
@@ -802,7 +800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: level1
-  delayBeforeTransition: 3
+  delayBeforeTransition: 5
   useTransitionMusic: 0
   transitionClip: {fileID: 0}
   transitionAudioSource: {fileID: 0}
