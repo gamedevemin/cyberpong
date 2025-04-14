@@ -56,19 +56,20 @@ public class Paddle : MonoBehaviour
         transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
         //
 
-        if(LevelManager1.hayattakiBallSayisi > 2 && LevelManager1.hayattakiBallSayisi < 4)
+        if(LevelManager1.hayattakiBallSayisi > 3 && LevelManager1.hayattakiBallSayisi < 5)
         {
             transform.localScale = new Vector3(paddleUzunlugu + 150, 5, 0);
+            minX = -12.9f;
+            maxX = 12.9f;
         }
 
-        if(LevelManager1.hayattakiBallSayisi > 4 && LevelManager1.hayattakiBallSayisi < 6)
+        if(LevelManager1.hayattakiBallSayisi > 5 && LevelManager1.hayattakiBallSayisi < 8)
         {
             transform.localScale = new Vector3(paddleUzunlugu + 250, 5, 0);
+            minX = -13.89f;
+            maxX = 13.89f;
         }
 
-
-       
-        
         // Temasta olan duvarların rengini paddle rengine eşitliyoruz
         foreach (GameObject wall in currentWallCollisions)
         {
@@ -78,8 +79,7 @@ public class Paddle : MonoBehaviour
             }
         }
 
-
-         if(currentWallCollisions.Count == 2)
+        if(currentWallCollisions.Count == 2)
         {
             currentWallCollisions.Add(top);
             top.tag="Paddle";
@@ -89,7 +89,6 @@ public class Paddle : MonoBehaviour
             top.tag="Wall";
 
         } 
-
     }
 
     // PADDLE COLLİSİYONLARI
@@ -120,6 +119,4 @@ public class Paddle : MonoBehaviour
             }
         }
     }
-
-    
 }

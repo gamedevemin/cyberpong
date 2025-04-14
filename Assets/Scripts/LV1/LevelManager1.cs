@@ -27,8 +27,7 @@ public class LevelManager1 : MonoBehaviour
 
     public GameObject transitionBackground;    
     void Start()
-    {
-        UnityEngine.Debug.Log("startlevel1");
+    {      
         GameObject newBall = Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
         transitionBackground.SetActive(false); // SAHNE GEÇİŞİ AMAÇLI EKRANI KAPLAYACAK OLAN GÖRÜNTÜ
         paddleScale = paddleObject.transform.localScale;
@@ -36,31 +35,22 @@ public class LevelManager1 : MonoBehaviour
 
     void Update()
     {   // FİNAL aşamasına geçiş için paddle'ın boyu kontrolsüzce uzamasını sağladım
-        if(hayattakiBallSayisi >= 5)
+        if(hayattakiBallSayisi >= 8)
         {   // Paddle X ekseninde 2000 olana kadar growSpeed hızında X eksenindeki boyutunu arttırdım
             if (paddleScale.x < targetScaleX)
                 {
-                    paddleScale.x += growSpeed * Time.deltaTime;
-                    
-                    
+                    paddleScale.x += growSpeed * Time.deltaTime;                   
                     paddleObject.transform.localScale = paddleScale;
-
                 }
                 //
         }
-       
         //
 
-
-        if(hayattakiBallSayisi > 10)
-        {
-            StartCoroutine(ArtardaBallOlustur());
-        }
-        
-
+        if(hayattakiBallSayisi > 15) StartCoroutine(ArtardaBallOlustur());
+       
         if (hayattakiBallSayisi > 500)
         { // TRANSPARAN BİR ŞEKİLDE EKRANI KAPLAMAYI BEKLEYEN FİNAL EKRANINA GEÇİŞ EKRANININ TRANSPARAN DEĞERİNİ ARTTIRIYORUM
-
+            MusicManager.instance.GetComponent<AudioReverbFilter>().enabled = true;
             SpriteRenderer fsr = finalScreen.GetComponent<SpriteRenderer>();
             Color col = fsr.color;
             col.a += fadeSpeed * Time.deltaTime;
@@ -70,43 +60,35 @@ public class LevelManager1 : MonoBehaviour
             // BİR SÜRE BEKLEDİKTEN SONRA FİNAL EKRANININ GELMESİNİ SAĞLIYORUM
             if (!sceneTransitionInitiated)
             {   
-                UnityEngine.Debug.Log("Transition Timer: " + transitionTimer);
                 transitionTimer += Time.deltaTime;
                 if (transitionTimer >= 5) // BU KADAR ZAMAN BEKLENİYOR FİNAL EKRANINA GEÇMEDEN ÖNCE
                 {
-                    UnityEngine.Debug.Log("Geçiş başlatılıyor");
                     sceneTransitionInitiated = true;                    
                     transitionBackground.SetActive(true); // FİNAL EKRANI AÇILIYOR
                     FindObjectOfType<SceneLoader>().StartSceneTransition(); // DİĞER SAHNEYE GEÇMEK İÇİN SceneLoader.cs'deki ilgili fonksiyon burada çalıştırılıyor
-                    // MusicManager.instance.StopMusic(); 
+                    MusicManager.instance.StopMusic(); 
                 }
             }
             //
 
-            
         }
         //
 
-        if(hayattakiBallSayisi == 0)
-        {
-            CreateBall();
-            
-        }
+        if(hayattakiBallSayisi == 0) CreateBall();
     }
 
     IEnumerator ArtardaBallOlustur()
     {
-        while (hayattakiBallSayisi < 600)
+        while (hayattakiBallSayisi < 500)
         {
             Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
             hayattakiBallSayisi++;
-            yield return new WaitForSeconds(0.2f); // ⏱ 1 saniye bekle
+            yield return new WaitForSeconds(0.3f); // ⏱ 1 saniye bekle
         }
     }
 
     void CreateBall()
         {
-               
                GameObject newBall = Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
                Ball.ballOlusturmaSayaci = 0;
                hayattakiBallSayisi++;

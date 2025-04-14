@@ -17,19 +17,26 @@ public class SceneLoader : MonoBehaviour
     // Bu metot sahneye geçişi başlatır, ama bekleme süresi ekler
     public void StartSceneTransition()
     {
-        UnityEngine.Debug.Log("StartSceneTransition");
+        
         StartCoroutine(TransitionAfterDelay());
     }
+    
 
     private IEnumerator TransitionAfterDelay()
     
     {
+        Debug.Log("Transition başlamadan önce MusicManager var mı? " + (FindObjectOfType<MusicManager>() != null));
+        if (MusicManager.instance != null && useTransitionMusic)
+        {
+            MusicManager.instance.StopMusic();
+        }
         
         // Eğer geçiş müziği aktifse, müzik çalacak
         if (useTransitionMusic && transitionClip != null && transitionAudioSource != null)
         {
             transitionAudioSource.clip = transitionClip;
             transitionAudioSource.Play();
+
 
         }
         yield return new WaitForSeconds(delayBeforeTransition);

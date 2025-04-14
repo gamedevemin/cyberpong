@@ -1,5 +1,6 @@
+using System.Collections;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LevelManager2 : MonoBehaviour
 {
     [SerializeField] 
@@ -15,7 +16,7 @@ public class LevelManager2 : MonoBehaviour
         if (audioSource != null && startClip != null)
         {
             audioSource.clip = startClip;
-            audioSource.Play();            
+            StartCoroutine(playSound());            
         }
         else
         {
@@ -26,6 +27,13 @@ public class LevelManager2 : MonoBehaviour
 
     void Update()
     {
-        if(!audioSource.isPlaying) MusicManager.instance.StartMusic(); // audioSource'deki ses bittiğinde oyun müziğinin başlatılması
+        
+         if(!audioSource.isPlaying) MusicManager.instance.StartMusic(); 
+    }
+
+    IEnumerator playSound()
+    {
+        yield return new WaitForSeconds(1);
+        audioSource.Play();
     }
 }
