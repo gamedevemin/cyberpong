@@ -98,7 +98,7 @@ public class Ball : MonoBehaviour
         //
 
         
-        UnityEngine.Debug.Log(ballOlusturmaSayaci);
+        UnityEngine.Debug.Log(LevelManager1.hayattakiBallSayisi);
     }
     //
 

@@ -1,5 +1,9 @@
+using JetBrains.Annotations;
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
 using UnityEngine;
-
+using System.Collections;
+using System.Diagnostics;
 public class LevelManager1 : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +18,7 @@ public class LevelManager1 : MonoBehaviour
     public GameObject finalScreen;
     private bool sceneTransitionInitiated = false;
     public float transitionTimer = 0f; // Geçişin başlaması için gecikme sayacı
-    public float fadeSpeed = 5f;
+    public float fadeSpeed;
     
     [Header("FİNAL için Büyüme Ayarları")]
     public int targetScaleX = 2000; // HEDEF PADDLE X SCALE DEĞERİ
@@ -26,7 +30,6 @@ public class LevelManager1 : MonoBehaviour
     {
         GameObject newBall = Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
         transitionBackground.SetActive(false); // SAHNE GEÇİŞİ AMAÇLI EKRANI KAPLAYACAK OLAN GÖRÜNTÜ
-
         paddleScale = paddleObject.transform.localScale;
     }
 
@@ -47,9 +50,16 @@ public class LevelManager1 : MonoBehaviour
        
         //
 
-        // FİNAL EKRANINA GEÇİŞ EKRANI BAŞLATILIYOR
-        if (hayattakiBallSayisi > 1)
+
+        if(hayattakiBallSayisi > 10)
+        {
+            StartCoroutine(ArtardaBallOlustur());
+        }
+        
+
+        if (hayattakiBallSayisi > 500)
         { // TRANSPARAN BİR ŞEKİLDE EKRANI KAPLAMAYI BEKLEYEN FİNAL EKRANINA GEÇİŞ EKRANININ TRANSPARAN DEĞERİNİ ARTTIRIYORUM
+
             SpriteRenderer fsr = finalScreen.GetComponent<SpriteRenderer>();
             Color col = fsr.color;
             col.a += fadeSpeed * Time.deltaTime;
@@ -82,6 +92,17 @@ public class LevelManager1 : MonoBehaviour
             
         }
     }
+
+    IEnumerator ArtardaBallOlustur()
+    {
+        while (hayattakiBallSayisi < 600)
+        {
+            Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
+            hayattakiBallSayisi++;
+            yield return new WaitForSeconds(0.2f); // ⏱ 1 saniye bekle
+        }
+    }
+
     void CreateBall()
         {
                
