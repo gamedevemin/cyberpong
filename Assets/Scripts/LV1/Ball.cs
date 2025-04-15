@@ -66,6 +66,7 @@ public class Ball : MonoBehaviour
         // BALL'IN SEKMESİ VE HIZININ ARTMASI
         if(collision.gameObject.tag == "Paddle" || collision.gameObject.tag == "Wall")
         {
+            UnityEngine.Debug.Log("car0");
         direction = Vector2.Reflect(direction, collision.contacts[0].normal); // BALL'IN TERS YÖNÜNÜ DEĞİŞKENE ATAMAK
         rb.linearVelocity = direction * speed; // BALL'IN TERS YÖNE YÖNELMESİNİ SAĞLAMAK
         speed = Mathf.Min(speed + 1, 50); 

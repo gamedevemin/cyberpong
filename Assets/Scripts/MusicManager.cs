@@ -1,5 +1,10 @@
 using UnityEngine;
-
+using JetBrains.Annotations;
+using Unity.VisualScripting;
+using UnityEditor.Callbacks;
+using UnityEngine;
+using System.Collections;
+using System.Diagnostics;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
@@ -28,10 +33,7 @@ public class MusicManager : MonoBehaviour
     }
     void Update()
     {
-       
-        Debug.Log(instance);
-        Debug.Log(audioSource.isPlaying);
-        Debug.Log(AudioListener.pause);
+  
     }
 
     // Müzik durdurma
@@ -51,4 +53,14 @@ public class MusicManager : MonoBehaviour
             audioSource.Play();
         }
     }
+
+    public static IEnumerator FadeOutMusic()
+{
+    AudioSource source = MusicManager.instance.GetComponent<AudioSource>();
+    while (source.volume > 0.1f)
+    {
+        source.volume -= 0.01f;
+        yield return new WaitForSeconds(0.05f);
+    }
+}
 }

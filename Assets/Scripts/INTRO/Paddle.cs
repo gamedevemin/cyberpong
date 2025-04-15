@@ -9,8 +9,8 @@ public class Paddle : MonoBehaviour
     public static int speed = 10;
 
     [Header("SANAL DUVARLAR")]
-    public float minX = -7.5f; // PADDLE'A SANAL SOL DUVAR-ENGEL
-    public float maxX = 7.5f; // PADDLE'A SANAL SAĞ DUVAR-ENGEL
+    public float minX;
+    public float maxX;
 
     [Header("Skor & Görsel Bileşenler")]
     public GameObject score;
@@ -43,7 +43,7 @@ public class Paddle : MonoBehaviour
     {
         paddleTransform = GetComponent<Transform>();
         newPaddleScale = paddleTransform.localScale;
-        transform.localScale = new Vector3(paddleUzunlugu, 5, 0); // PADDLE BAŞLANGIÇ UZUNLUĞU
+        transform.localScale = new Vector3(paddleUzunlugu, 0.07f, 0); // PADDLE BAŞLANGIÇ UZUNLUĞU
         sr = GetComponent<SpriteRenderer>();  // PADDLE'IN SPRİTERENDERER'INI DEGİSKENE ATAMAK
     }
 
@@ -56,18 +56,26 @@ public class Paddle : MonoBehaviour
         transform.position = new Vector3(newPositionX, transform.position.y, transform.position.z);
         //
 
+
+        if(LevelManager1.hayattakiBallSayisi < 4)
+        {
+            transform.localScale = new Vector3(paddleUzunlugu, 0.07f, 0);
+            minX = -9.84f;
+            maxX = 9.84f;
+        }
+
         if(LevelManager1.hayattakiBallSayisi > 3 && LevelManager1.hayattakiBallSayisi < 5)
         {
-            transform.localScale = new Vector3(paddleUzunlugu + 150, 5, 0);
-            minX = -12.9f;
-            maxX = 12.9f;
+            transform.localScale = new Vector3(paddleUzunlugu + 2f, 0.07f, 0);
+            minX = -10.82f;
+            maxX = 10.82f;
         }
 
         if(LevelManager1.hayattakiBallSayisi > 5 && LevelManager1.hayattakiBallSayisi < 8)
         {
-            transform.localScale = new Vector3(paddleUzunlugu + 250, 5, 0);
-            minX = -13.89f;
-            maxX = 13.89f;
+            transform.localScale = new Vector3(paddleUzunlugu + 6f, 0.07f, 0);
+            minX = -12.87f;
+            maxX = 12.87f;
         }
 
         // Temasta olan duvarların rengini paddle rengine eşitliyoruz
