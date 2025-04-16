@@ -7,6 +7,9 @@ Mouse Hareketi: Paddle'ı hareket ettirir.
 Mouse Tuşları: Dash yeteneğini kullanır.
 Space Tuşu: Zaman yavaşlatır.
 
+## Oyun Hikayesi
+Etik ve eğlenceli bir oyun yapmaya çalışırken Cyberpunk bir evrendeki Pong Oyununun Raketine dönüşen kahramanımızın yapabildiği tek şey doğal bir Pong Raketi gibi hareket edip oyunu oynamaktır; oynadıkça artan top sayılarından bir süre sonra raket x ekseninde sağ ve sol duvara değecek kadar uzadıkça uzar, duvarlara değdiğinde duvarları Rakete dönüştürür Bunun sonucunda eskiden duvar olan Raketlerin çevrelediği ve sürekli çoğalan toplar bir süre sonra o kadar çoğalır ki Raket Duvarlar ile birleşmek zorunda kalıp patlama efektiyle kimyasal-biyolojik birleşmeyi andıran bir birleşim gerçekleşir. Bu birleşim sonucunda kahramanımızın soluk soluğa kaldığı duyulur o artık bir raket değildir, 2D Platform oyununun distopyasına karşı savaş verecek olan çılgın bir yaşlıya dönüşmüştür, silahları ise -yüreği ile beraber- Kara Neon bir Pong Raketi Kılıcı ile Kütlesiz Kara Pong Topları'dır.
+
 ## Ekran Görüntüleri
 ### Başlangıç Ekranı
 ![cyberpong1](https://github.com/user-attachments/assets/0e7a2429-4340-4cda-9965-3cb14c3abfc9)
