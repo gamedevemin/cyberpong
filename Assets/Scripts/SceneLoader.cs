@@ -25,12 +25,6 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator TransitionAfterDelay()
     
     {
-        Debug.Log("Transition başlamadan önce MusicManager var mı? " + (FindObjectOfType<MusicManager>() != null));
-        if (MusicManager.instance != null && useTransitionMusic)
-        {
-            MusicManager.instance.StopMusic();
-        }
-        
         // Eğer geçiş müziği aktifse, müzik çalacak
         if (useTransitionMusic && transitionClip != null && transitionAudioSource != null)
         {

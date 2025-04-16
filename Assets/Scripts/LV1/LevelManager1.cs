@@ -5,6 +5,11 @@ using UnityEngine;
 using System.Collections;
 using System.Diagnostics;
 using UnityEngine.InputSystem;
+using System.Linq;
+using System.Collections.Generic;
+using System;
+
+
 public class LevelManager1 : MonoBehaviour
 {
     [SerializeField]
@@ -51,9 +56,10 @@ public class LevelManager1 : MonoBehaviour
         }
         //
 
+        if(hayattakiBallSayisi > 900) StartCoroutine(ballsBigger());
         if(hayattakiBallSayisi > 0) StartCoroutine(ArtardaBallOlustur()); 
-       
-        if (hayattakiBallSayisi > 1000)
+
+        if (hayattakiBallSayisi > 905)
         { // TRANSPARAN BİR ŞEKİLDE EKRANI KAPLAMAYI BEKLEYEN FİNAL EKRANINA GEÇİŞ EKRANININ TRANSPARAN DEĞERİNİ ARTTIRIYORUM
 
             StartCoroutine(IEStopMusic());
@@ -92,7 +98,7 @@ public class LevelManager1 : MonoBehaviour
 
     IEnumerator ArtardaBallOlustur()
     {
-        while (hayattakiBallSayisi < 500)
+        while (hayattakiBallSayisi < 700)
         {
             Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
             hayattakiBallSayisi++;
@@ -124,6 +130,23 @@ public class LevelManager1 : MonoBehaviour
         musicSource.Stop();
         musicSource.volume = startVolume; // Bir sonraki sahne için eski haline getir (istersen sıfırda da bırakabilirsin)
     }
+
+    IEnumerator ballsBigger()
+{
+    List<GameObject> balls = GameObject.FindGameObjectsWithTag("Ball").ToList();
+
+    foreach (int i in Enumerable.Range(0, 8)) // 8 kez dönecek: 0-7
+    {
+        foreach (GameObject ball in balls)
+        {
+            ball.transform.localScale += new Vector3(0.005f, 0.005f, 0.005f);
+
+            
+        }
+
+        yield return new WaitForSeconds(1f); // her adım arasında bekle (toplam 0.8 saniyede büyür)
+    }
+}
 
 }    
     

@@ -33,7 +33,7 @@ public class LevelManager2 : MonoBehaviour
 
     IEnumerator playSound()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         audioSource.Play();
     }
 }

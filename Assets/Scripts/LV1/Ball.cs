@@ -4,6 +4,7 @@ using UnityEditor.Callbacks;
 using UnityEngine;
 using System.Collections;
 using System.Diagnostics;
+using UnityEngine.Rendering;
 public class Ball : MonoBehaviour
 {
     [SerializeField]
@@ -58,6 +59,9 @@ public class Ball : MonoBehaviour
         //
 
         if (ballOlusturmaSayaci >= 4) CreateBall(); // YENİ BALL OLUŞMASI
+
+
+
     }
 
     // BALL COLLİSİON'I İLE DİĞER COLLİSİONLARIN ETKİLEŞİMİ SONUÇLARI
@@ -66,7 +70,6 @@ public class Ball : MonoBehaviour
         // BALL'IN SEKMESİ VE HIZININ ARTMASI
         if(collision.gameObject.tag == "Paddle" || collision.gameObject.tag == "Wall")
         {
-            UnityEngine.Debug.Log("car0");
         direction = Vector2.Reflect(direction, collision.contacts[0].normal); // BALL'IN TERS YÖNÜNÜ DEĞİŞKENE ATAMAK
         rb.linearVelocity = direction * speed; // BALL'IN TERS YÖNE YÖNELMESİNİ SAĞLAMAK
         speed = Mathf.Min(speed + 1, 50); 
@@ -139,7 +142,7 @@ public class Ball : MonoBehaviour
     }
     //
 
-
+   
    
 }
 
