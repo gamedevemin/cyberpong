@@ -3,14 +3,14 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField] 
-    public SceneLoader sceneLoader;  // SceneLoader script'inin referansı
+    public SceneLoader sceneLoader;
 
     void Start()
     {
-        // Oyun başladığında sahne geçişini başlat
+       
         if (sceneLoader != null)
         {
-            sceneLoader.StartSceneTransition();  // StartSceneTransition() metodunu çağır
+            sceneLoader.StartSceneTransition(); 
         }
         else
         {

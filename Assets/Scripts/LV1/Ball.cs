@@ -1,6 +1,5 @@
 using JetBrains.Annotations;
 using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using System.Collections;
 using System.Diagnostics;
@@ -8,7 +7,6 @@ using UnityEngine.Rendering;
 public class Ball : MonoBehaviour
 {
     [SerializeField]
-    
 
     [Header("Topun Hareket Ayarları")]
     private int speed;
@@ -49,7 +47,6 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-
         // BALL YOK OLUŞ
         if (transform.position.y <= -5){
             LevelManager1.hayattakiBallSayisi--;
@@ -57,11 +54,7 @@ public class Ball : MonoBehaviour
             
         } 
         //
-
         if (ballOlusturmaSayaci >= 4) CreateBall(); // YENİ BALL OLUŞMASI
-
-
-
     }
 
     // BALL COLLİSİON'I İLE DİĞER COLLİSİONLARIN ETKİLEŞİMİ SONUÇLARI
@@ -76,6 +69,7 @@ public class Ball : MonoBehaviour
         } 
         //
         
+        // PADDLE İLE ETKİLEŞİM
         if(collision.gameObject.tag == "Paddle")
         { 
             ballOlusturmaSayaci++; // SAYAŞ ARTIŞI
@@ -91,44 +85,8 @@ public class Ball : MonoBehaviour
             paddleScript.sr.color = paddleScript.colors[randomIndex];
             //
         }
-        
-        // SKİLL TASIYAN BALL'LAR PADDLE'A DEĞDİĞİNDE RENKLERİ VE ETİKETLERİ ORJİNALE DÖNER
-        if(collision.gameObject.CompareTag("Paddle") && 
-           (gameObject.tag == "FastSkill" || gameObject.tag == "BigSkill"))
-        {
-            gameObject.tag = "Ball";
-            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        }
         //
 
-        
-        UnityEngine.Debug.Log(LevelManager1.hayattakiBallSayisi);
-    }
-    //
-
-    // BALL İLE CARPISAN COLLİSİONLARIN TAGLERİNE ÖZEL ETKİLEŞİMLERİN AYARLANMASI
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        var sr = GetComponent<SpriteRenderer>(); // RENK DEGİSTİRMEK İÇİN KULLANACAGIMIZ SPRİTERENDERER'I ZORUNDA OLMADIGIMIZ HALDE DEGİSKENE ATIYORUZ
-
-
-        // BALL BİR SKİLL'İ TAŞIMAYA BAŞLARSA O SKİLL'İN TAGİNİ VE ÖZEL RENGİNİ ALIYOR ARDINDAN SKİLL GAMEOBJECT'İNİ YOK EDİYOR
-        if (other.CompareTag("Fast"))
-        {
-            sr.color = new Color(3f/255f, 252f/255f, 252f/255f);
-            gameObject.tag = "FastSkill";
-            Destroy(other.gameObject); // SKİLL VARLIGINI YOK ET
-
-        }
-
-        if (other.CompareTag("Big"))
-        {
-            sr.color = new Color(0f/255f, 255f/255f, 127f/255f);
-            gameObject.tag = "BigSkill";
-            Destroy(other.gameObject); // SKİLL VARLIGINI YOK ET
-
-        }
-        //
     }
     //
 
@@ -138,7 +96,6 @@ public class Ball : MonoBehaviour
         GameObject newBall = Instantiate(BallPrefabi, Vector3.zero, Quaternion.identity);
         ballOlusturmaSayaci = 0;
         LevelManager1.hayattakiBallSayisi++;
-
     }
     //
 

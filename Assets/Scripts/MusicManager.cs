@@ -1,7 +1,6 @@
 using UnityEngine;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using System.Collections;
 using System.Diagnostics;
@@ -31,36 +30,27 @@ public class MusicManager : MonoBehaviour
         if (!audioSource.isPlaying)
             audioSource.Play();
     }
-    void Update()
-    {
-  
-    }
 
     // Müzik durdurma
     public void StopMusic()
     {
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            audioSource.Stop();
-        }
+        if (audioSource != null && audioSource.isPlaying) audioSource.Stop();
+   
     }
 
     // Müzik başlatma
     public void StartMusic()
-    {
-        if (audioSource != null && !audioSource.isPlaying)
-        {
-            audioSource.Play();
-        }
+    { 
+        if (audioSource != null && !audioSource.isPlaying) audioSource.Play();
     }
 
     public static IEnumerator FadeOutMusic()
-{
-    AudioSource source = MusicManager.instance.GetComponent<AudioSource>();
-    while (source.volume > 0.1f)
     {
-        source.volume -= 0.01f;
-        yield return new WaitForSeconds(0.05f);
+        AudioSource source = MusicManager.instance.GetComponent<AudioSource>();
+        while (source.volume > 0.1f)
+        {
+            source.volume -= 0.01f;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
-}
 }

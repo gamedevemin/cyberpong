@@ -1,6 +1,5 @@
 using JetBrains.Annotations;
 using Unity.VisualScripting;
-using UnityEditor.Callbacks;
 using UnityEngine;
 using System.Collections;
 using System.Diagnostics;
@@ -14,12 +13,12 @@ public class LevelManager1 : MonoBehaviour
 {
     [SerializeField]
     
-    private bool spacePress;
-    private bool mouse0Press;
-    private bool mouse1Press;
+    private bool spacePress; // Space'e 1 kez basıldı mı kontrolü
+    private bool mouse0Press; // Mouse 0'a 1 kez basıldı mı kontrolü
+    private bool mouse1Press; // Mouse 1'e 1 kez basıldı mı kontrolü
     [Header("Paddle")]
     private Vector3 paddleScale;
-    public GameObject SkillsInfoCanvas;
+    public GameObject SkillsInfoCanvas; 
     public GameObject paddleObject;
     public static int hayattakiBallSayisi = 1;
     public GameObject ballPrefabi;
@@ -28,10 +27,10 @@ public class LevelManager1 : MonoBehaviour
     public GameObject finalScreen;
     private bool sceneTransitionInitiated = false;
     public float transitionTimer = 0f; // Geçişin başlaması için gecikme sayacı
-    public float fadeSpeed;
+    public float fadeSpeed; // Patlama (Beyaz Ekran) Hızı
     
     [Header("FİNAL için Büyüme Ayarları")]
-    public int targetScaleX = 2000; // HEDEF PADDLE X SCALE DEĞERİ
+    public int targetScaleX = 2000; // HEDEF PADDLE X SCALE DEĞERİ -GEREĞİNDEN FAZLA-
     public float growSpeed = 0.001f; // PADDLE'IN HEDEF X SCALE DEĞERİNE ULAŞMA HIZI
 
 
@@ -39,7 +38,7 @@ public class LevelManager1 : MonoBehaviour
     void Start()
     {    
         GameObject newBall = Instantiate(ballPrefabi, Vector3.zero, Quaternion.identity);
-        transitionBackground.SetActive(false); // SAHNE GEÇİŞİ AMAÇLI EKRANI KAPLAYACAK OLAN GÖRÜNTÜ
+        transitionBackground.SetActive(false); // SAHNE GEÇİŞİNDE KAPLAYACAK OLAN GÖRÜNTÜ 
         paddleScale = paddleObject.transform.localScale;
     }
 
@@ -57,11 +56,9 @@ public class LevelManager1 : MonoBehaviour
         //
 
         if(hayattakiBallSayisi > 900) StartCoroutine(ballsBigger());
-        if(hayattakiBallSayisi > 0) StartCoroutine(ArtardaBallOlustur()); 
-
+        if(hayattakiBallSayisi > 8) StartCoroutine(ArtardaBallOlustur()); 
         if (hayattakiBallSayisi > 905)
         { // TRANSPARAN BİR ŞEKİLDE EKRANI KAPLAMAYI BEKLEYEN FİNAL EKRANINA GEÇİŞ EKRANININ TRANSPARAN DEĞERİNİ ARTTIRIYORUM
-
             StartCoroutine(IEStopMusic());
             SpriteRenderer fsr = finalScreen.GetComponent<SpriteRenderer>();
             Color col = fsr.color;
@@ -78,7 +75,6 @@ public class LevelManager1 : MonoBehaviour
                     sceneTransitionInitiated = true;                    
                     transitionBackground.SetActive(true); // FİNAL EKRANI AÇILIYOR
                     FindObjectOfType<SceneLoader>().StartSceneTransition(); // DİĞER SAHNEYE GEÇMEK İÇİN SceneLoader.cs'deki ilgili fonksiyon burada çalıştırılıyor
-                    
                 }
             }
             //
@@ -88,12 +84,13 @@ public class LevelManager1 : MonoBehaviour
 
         if(hayattakiBallSayisi == 0) CreateBall();
 
-
+        // Oyun başındaki bilgilendirmelerin ekrandan silinmesi
         if(Input.GetMouseButtonDown(0)) mouse0Press = true;
         if(Input.GetMouseButtonDown(1)) mouse1Press = true;
         if(Input.GetKeyDown(KeyCode.Space)) spacePress = true;
         if(Input.GetKeyDown(KeyCode.Escape) || (mouse0Press && mouse1Press && spacePress)) SkillsInfoCanvas.SetActive(false);
-    
+        //
+
     }
 
     IEnumerator ArtardaBallOlustur()
@@ -132,22 +129,22 @@ public class LevelManager1 : MonoBehaviour
     }
 
     IEnumerator ballsBigger()
-{
-    List<GameObject> balls = GameObject.FindGameObjectsWithTag("Ball").ToList();
-
-    foreach (int i in Enumerable.Range(0, 8)) // 8 kez dönecek: 0-7
     {
-        foreach (GameObject ball in balls)
+        List<GameObject> balls = GameObject.FindGameObjectsWithTag("Ball").ToList();
+    
+        foreach (int i in Enumerable.Range(0, 8)) // 8 kez dönecek: 0-7
         {
-            ball.transform.localScale += new Vector3(0.005f, 0.005f, 0.005f);
-
-            
+            foreach (GameObject ball in balls)
+            {
+                ball.transform.localScale += new Vector3(0.005f, 0.005f, 0.005f);
+    
+                
+            }
+    
+            yield return new WaitForSeconds(1f); // her adım arasında bekle (toplam 0.8 saniyede büyür)
         }
-
-        yield return new WaitForSeconds(1f); // her adım arasında bekle (toplam 0.8 saniyede büyür)
     }
-}
-
+    
 }    
     
 
