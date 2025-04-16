@@ -19,3 +19,5 @@ Etik ve eğlenceli bir oyun yapmaya çalışırken Cyberpunk bir evrendeki Pong 
 
 ### Birleşme Sonrası
 ![cyberpong3](https://github.com/user-attachments/assets/b2678efe-57c9-48d8-86a3-71c5205bbcc0)
+
+# Kodlara uygun yorum satırları eklenicek.
