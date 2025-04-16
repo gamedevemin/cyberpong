@@ -1,4 +1,4 @@
-# Cyberpong https://beginneruedev.itch.io/cyberpong-one
+# Cyberpong https://tigemin.itch.io/cyberpong-one
 
 **CyberPong**: Bir Alim, etik ve eğlenceli bir oyun geliştirmeye çalışırken yanlışlıkla kendini eski bir klasik olan Pong oyunundaki paddle (raket) olarak buldu. 
 
