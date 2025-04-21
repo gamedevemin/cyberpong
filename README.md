@@ -12,7 +12,8 @@ Etik ve eğlenceli bir oyun yapmaya çalışırken Cyberpunk bir evrendeki Pong 
 
 ## Ekran Görüntüleri
 ### Başlangıç Ekranı
-![{2B8B5DEE-5135-4421-889F-8510625F733A}](https://github.com/user-attachments/assets/b1750ec7-fff1-47db-b8fd-edf616893555)
+![{F4BD218D-FE8B-46E8-936E-403E252E3A18}](https://github.com/user-attachments/assets/11d843f8-8769-4041-a59d-403f8f523495)
+
 
 
 ### Oyuniçi Ekran
