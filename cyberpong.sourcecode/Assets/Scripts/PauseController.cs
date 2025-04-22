@@ -8,13 +8,18 @@ public class PauseController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(!Pause.activeSelf && Input.GetKeyDown(KeyCode.Escape)) Pause.SetActive(true); // PAUSE
-        else if (Pause.activeSelf && Input.GetKeyDown(KeyCode.Escape)) Pause.SetActive(false); // CONTINUE 
-
-
+        if(!Pause.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Pause.SetActive(true); // PAUSE
+        }    
+        else if (Pause.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Pause.SetActive(false); // CONTINUE
+        } 
     }
 
     public void QuitButton() 
@@ -24,5 +29,6 @@ public class PauseController : MonoBehaviour
     public void ContinueButton() 
     {
         Pause.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }

@@ -6,22 +6,30 @@ using System.Collections;
 using System.Diagnostics;
 public class MusicManager : MonoBehaviour
 {
+
+    /* 
+
+        ARKADA CALAN MÜZİĞİN KONTROL EDİLDİĞİ SINIF. YORUM SATIRLARI İÇİN GÜNCELLEME BEKLİYOR.
+
+    */
+
+
     public static MusicManager instance;
     private AudioSource audioSource;
 
+
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Start()
     {
-        // Zaten varsa kendini yok et (tekil yapı sağlanır)
-        if (instance != null && instance != this)
+
+        if (instance != null && instance != this) // Bir başka ses oynatılıyorsa
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Music
             return;
-
-
-
-            // MÜZİKLE ALAKASIZ
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Confined;
         }
 
         // Singleton kur

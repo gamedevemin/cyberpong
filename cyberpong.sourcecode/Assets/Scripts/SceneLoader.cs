@@ -21,6 +21,10 @@ public class SceneLoader : MonoBehaviour
         StartCoroutine(TransitionAfterDelay());
     }
     
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
 
     private IEnumerator TransitionAfterDelay()
     
